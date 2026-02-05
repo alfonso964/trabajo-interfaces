@@ -8,7 +8,10 @@
 </head>
 <body>
 
+   
     <input type="checkbox" id="modo-oscuro">
+    <!-- Toggle menú hamburguesa -->
+    <input type="checkbox" id="menu-toggle">
 
     <div class="pagina">
         <nav class="navbar">
@@ -16,12 +19,21 @@
                 <img src="assets/imagenes/logo.png" alt="Garage Élite" class="logo-img">
             </div>
 
+            <!-- Botón hamburguesa -->
+            <label for="menu-toggle" class="hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
             <ul class="menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#filosofia">Filosofía</a></li>
                 <li><a href="#modelos">Modelos</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                
             </ul>
         </nav>
 
@@ -37,13 +49,33 @@
             </div>
         </header>
 
-         <!-- FILOSOFÍA -->
+        <!-- FILOSOFÍA -->
         <section id="filosofia" class="seccion">
             <div class="contenedor-split">
                 <div class="split-texto">
                     <h2>Nuestra Esencia</h2>
-                    <p>Ingeniería de precisión y pasión por la excelencia.</p>
+                    <p>
+                        En Garage Élite entendemos el automóvil como una obra de ingeniería,
+                        diseño y carácter. No trabajamos con simples vehículos, sino con
+                        experiencias pensadas para quienes buscan algo más que conducir.
+                    </p>
+                    <br/>
+
+                    <p>
+                        Cada modelo que seleccionamos cumple con los más altos estándares
+                        de calidad, rendimiento y exclusividad. Desde la importación hasta
+                        la entrega final, cuidamos cada detalle para ofrecer un servicio
+                        a la altura de nuestros clientes.
+                    </p>
+                    <br/>
+
+                    <p>
+                        Nuestro equipo combina <strong>pasión, tecnología y experiencia</strong>
+                        para garantizar confianza, transparencia y excelencia en cada proyecto.
+                    </p>
+
                     <p><strong>“La excelencia no es un acto, es un hábito.”</strong></p>
+                                   
                 </div>
                 <div class="split-imagen">
                     <img src="assets/imagenes/imagenTaller.avif" class="img-flotante" alt="Taller">
@@ -59,7 +91,7 @@
                 <article class="tarjeta-3d">
                     <div class="giro-card">
                         <div class="cara frontal">
-                            <img src="assets/imagenes/imagen2.webp" alt="Mclaren P1" >
+                            <img src="assets/imagenes/imagen2.webp" alt="Mclaren P1">
                             <h3>Mclaren P1</h3>
                         </div>
                         <div class="cara trasera">
@@ -71,11 +103,11 @@
                     </div>
                 </article>
 
-                 <article class="tarjeta-3d">
+                <article class="tarjeta-3d">
                     <div class="giro-card">
                         <div class="cara frontal">
-                            <img src="assets/imagenes/imagen7.webp" alt="Masseratti Gran Turismo" >
-                            <h3>Masseratti Gran Turismo</h3>
+                            <img src="assets/imagenes/imagen7.webp" alt="Maserati Gran Turismo">
+                            <h3>Maserati Gran Turismo</h3>
                         </div>
                         <div class="cara trasera">
                             <h3>Ficha Técnica</h3>
@@ -86,11 +118,10 @@
                     </div>
                 </article>
 
-
                 <article class="tarjeta-3d">
                     <div class="giro-card">
                         <div class="cara frontal">
-                            <img src="assets/imagenes/imagen3.webp" alt="Porsche 911 gt3 rs" >
+                            <img src="assets/imagenes/imagen3.webp" alt="Porsche 911 gt3 rs">
                             <h3>Porsche 911 gt3 rs</h3>
                         </div>
                         <div class="cara trasera">
@@ -128,6 +159,23 @@
             </div>
         </section>
 
+        <section id="galeria" class="seccion galeria">
+            <h2 class="titulo">Galería de interiores</h2>
+
+            <div class="galeria-grid">
+                <img src="assets/imagenes/interiorMclaren.webp" alt="Interior Mclaren P1">
+                <img src="assets/imagenes/interiorMaserati.webp" alt="Interior Maserati Gran Turismo">
+                <img src="assets/imagenes/interiorPorsche.avif" alt="Interior Porsche">
+                <img src="assets/imagenes/interiorRolls.webp" alt="Interior Rolls-Royce">
+            </div>
+        </section>
+
+
+
+
+
+
+
         <!-- DATOS -->
         <section class="seccion-datos">
             <div class="dato">
@@ -136,7 +184,7 @@
             </div>
             <div class="dato">
                 <h3>+500</h3>
-                <p>Ventas por todo el mundo </p>
+                <p>Ventas por todo el mundo</p>
             </div>
             <div class="dato">
                 <h3>100%</h3>
@@ -144,7 +192,7 @@
             </div>
         </section>
 
-          <!-- SERVICIOS -->
+        <!-- SERVICIOS -->
         <section id="servicios" class="seccion">
             <h2 class="titulo">Servicios Premium</h2>
 
@@ -152,23 +200,28 @@
                 <div class="servicio-item">
                     <img src="assets/iconos/importar.svg" alt="">
                     <h3>Importación</h3>
-                    <p>Nuestro principal servicio consiste en la importación
+                    <p>
+                        Nuestro principal servicio consiste en la importación
                         de cualquier vehículo de lujo que puedas desear.
                         Intentando conseguir el mejor acuerdo para los clientes.
                     </p>
                 </div>
+
                 <div class="servicio-item">
                     <img src="assets/iconos/reparacion.svg" alt="">
                     <h3>Taller</h3>
-                    <p>Ofrecemos servicio oficial de reparación.
+                    <p>
+                        Ofrecemos servicio oficial de reparación.
                         Contamos con las máquinas más sofisticadas y actualizadas
                         para poder realizar cualquier tipo de reparación.
                     </p>
                 </div>
+
                 <div class="servicio-item">
                     <img src="assets/iconos/seguridad.svg" alt="">
                     <h3>Seguridad 24h</h3>
-                    <p>Ofrecemos la posibilidad de contratar un servicio 
+                    <p>
+                        Ofrecemos la posibilidad de contratar un servicio 
                         para garantizar la seguridad de su vehículo.
                     </p>
                 </div>
@@ -188,14 +241,15 @@
             </div>
         </section>
 
+
         <footer class="pie">
             © 2026 Garage Élite
         </footer>
-
-
-        <label for="modo-oscuro" class="claro-oscuro" title="Cambiar tema">🌙</label>
-
-
     </div>
+
+    <label for="modo-oscuro" class="boton-luna" title="Cambiar tema">🌙</label>
+
+    
+
 </body>
 </html>

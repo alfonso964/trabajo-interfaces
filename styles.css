@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/*Definimos las variables globales que vamos a usar */
+/* VARIABLES GLOBALES */
 :root {
     --fondo: #ffffff;
     --texto: #111111;
@@ -12,7 +11,7 @@
     --blanco-puro: #ffffff;
 }
 
-#modo-oscuro:checked~.pagina {
+#modo-oscuro:checked ~ .pagina {
     --fondo: #121212;
     --texto: #d90429;
     --secundario: #1e1e1e;
@@ -39,13 +38,15 @@ body {
     overflow-x: hidden;
 }
 
-h1,h2,h3 {
+h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     color: var(--texto);
 }
 
-.tarjeta-estandar h3,.servicio-item h3,.cara h3 {
+.tarjeta-estandar h3,
+.servicio-item h3,
+.cara h3 {
     color: var(--primario);
 }
 
@@ -53,11 +54,12 @@ h1,h2,h3 {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-#modo-oscuro {
+#modo-oscuro,
+#menu-toggle {
     display: none;
 }
 
-/* Le aplicamos los estilos al menu de navegación*/
+/* NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
@@ -86,7 +88,7 @@ h1,h2,h3 {
     text-decoration: none;
     color: var(--texto);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 14px;
     transition: color 0.3s;
 }
 
@@ -94,6 +96,23 @@ h1,h2,h3 {
     color: var(--primario);
 }
 
+/* MENÚ HAMBURGUESA */
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburguesa span {
+    width: 28px;
+    height: 3px;
+    background-color: var(--texto);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* HERO */
 .hero {
     display: flex;
     align-items: center;
@@ -108,7 +127,7 @@ h1,h2,h3 {
 }
 
 .hero-texto h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 64px;
     margin-bottom: 20px;
     line-height: 1.1;
 }
@@ -118,7 +137,7 @@ h1,h2,h3 {
 }
 
 .hero-texto p {
-    font-size: 1.2rem;
+    font-size: 19px;
     margin-bottom: 30px;
     opacity: 0.9;
 }
@@ -138,6 +157,7 @@ h1,h2,h3 {
     animation: flotar 5s ease-in-out infinite;
 }
 
+/* BOTÓN */
 .boton-primario {
     display: inline-block;
     padding: 18px 40px;
@@ -156,6 +176,7 @@ h1,h2,h3 {
     box-shadow: 0 15px 30px rgba(217, 4, 41, 0.4);
 }
 
+/* SECCIONES */
 .seccion {
     padding: 100px 80px;
     view-timeline-name: --revelar;
@@ -170,7 +191,6 @@ h1,h2,h3 {
         opacity: 0;
         transform: translateY(60px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -180,16 +200,17 @@ h1,h2,h3 {
 .titulo {
     text-align: center;
     margin-bottom: 50px;
-    font-size: 2.5rem;
+    font-size: 40px;
 }
 
+/* GRID */
 .contenedor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-/* Sección filosofía*/
+/* FILOSOFÍA */
 .contenedor-split {
     display: flex;
     align-items: center;
@@ -213,18 +234,15 @@ h1,h2,h3 {
 }
 
 @keyframes flotar {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-30px);
     }
 }
 
-/* Tarjetas */
+/* TARJETAS */
 .tarjeta-3d {
     perspective: 1200px;
     height: 450px;
@@ -276,7 +294,8 @@ h1,h2,h3 {
     transform: translateY(-10px);
 }
 
-.cara img,.tarjeta-estandar img {
+.cara img,
+.tarjeta-estandar img {
     width: 100%;
     height: 220px;
     object-fit: contain;
@@ -284,39 +303,36 @@ h1,h2,h3 {
     border-radius: 10px;
 }
 
+/* EFECTO GLOW */
 .tarjeta-glow {
     position: relative;
     overflow: hidden;
-    transition: 
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .tarjeta-glow:hover {
     transform: translateY(-12px);
-    box-shadow:
-        0 20px 40px rgba(227, 9, 9, 0.61),
-        0 0 0 rgba(0,0,0,0); 
+    box-shadow: 0 20px 40px rgba(227, 9, 9, 0.6);
+}
+/*Galería*/
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.tarjeta-glow::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at center,
-       rgba(227, 9, 9, 0.61),
-        transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+.galeria-grid img {
+    width: 100%;
+    border-radius: 16px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.tarjeta-glow:hover::before {
-    opacity: 1;
+.galeria-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* DATOS */
 .seccion-datos {
     background-color: #0a0a0a;
     color: white;
@@ -328,10 +344,11 @@ h1,h2,h3 {
 }
 
 .dato h3 {
-    font-size: 3.5rem;
+    font-size: 56px;
     color: var(--primario);
 }
 
+/* SERVICIOS */
 .lista-servicios {
     display: flex;
     gap: 30px;
@@ -352,8 +369,7 @@ h1,h2,h3 {
     border-color: var(--primario);
 }
 
-/*Seccion del formulario de contacto*/
-
+/* CONTACTO */
 .seccion-contacto {
     padding: 100px 80px;
     background-color: var(--secundario);
@@ -397,15 +413,70 @@ h1,h2,h3 {
     transition: 0.3s;
 }
 
+/* FOOTER */
 .pie {
     padding: 50px;
     text-align: center;
     background: #000;
     color: #777;
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
-.claro-oscuro {
+@media (max-width: 1024px) {
+    .hero,
+    .contenedor-split {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 40px;
+    }
+
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .hero-visual img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hamburguesa {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: var(--blanco-puro);
+        flex-direction: column;
+        width: 100%;
+        padding: 30px 0;
+        gap: 25px;
+        align-items: center;
+        display: none;
+        border-bottom: 1px solid var(--borde);
+    }
+
+    #menu-toggle:checked ~ .pagina .menu {
+        display: flex;
+    }
+
+    .seccion {
+        padding: 60px 20px;
+    }
+
+    .lista-servicios {
+        flex-direction: column;
+    }
+
+    .dato h3 {
+        font-size: 40px;
+    }
+}
+
+.boton-luna {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -424,47 +495,9 @@ h1,h2,h3 {
     transition: 0.3s;
 }
 
-
-@media (max-width: 1024px) {
-
-    .hero,
-    .contenedor-split {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 40px;
-    }
-
-    .navbar {
-        padding: 15px 30px;
-    }
-
-    .hero-visual img {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-
-    /* En un proyecto real aquí iría un menú hamburguesa */
-    .seccion {
-        padding: 60px 20px;
-    }
-
-    .lista-servicios {
-        flex-direction: column;
-    }
-
-    .dato h3 {
-        font-size: 2.5rem;
-    }
-}
-
-#modo-oscuro:checked~.pagina .tarjeta-estandar p,
-#modo-oscuro:checked~.pagina .servicio-item p,
-#modo-oscuro:checked~.pagina .cara p {
+#modo-oscuro:checked ~ .pagina .tarjeta-estandar p,
+#modo-oscuro:checked ~ .pagina .servicio-item p,
+#modo-oscuro:checked ~ .pagina .cara p {
     color: #ffffff;
     opacity: 1;
 }
